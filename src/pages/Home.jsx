@@ -1,6 +1,10 @@
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+
 function Home() {
   return (
     <div>
+      <Header />
         <h1 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">Calçados Democrata</h1>
         <h2 class="text-4xl text-center font-extrabold">Para Homens que Caminham com Confiança</h2>
         <br />
@@ -50,6 +54,7 @@ function Home() {
           </div>
         </div>
       </div>
+    <Footer />
     </div>
   );
 }
