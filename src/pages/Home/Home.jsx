@@ -23,7 +23,7 @@ function Home() {
           <div>
             <img
               class="h-30 max-w-full rounded-lg"
-              src="/img2.webp"
+              src="/img2.jpg"
               alt=""
             />
           </div>
@@ -37,7 +37,7 @@ function Home() {
           <div>
             <img
               class="h-auto max-w-full rounded-lg"
-              src="/img4.jpg"
+              src="/img4.webp"
               alt=""
             />
           </div>
