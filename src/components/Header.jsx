@@ -18,7 +18,7 @@ function Header() {
       <nav className="hidden sm:flex justify-between items-center gap-4 font-semibold">
         <Link to="/"> Home </Link>
         <Link to="/Sobre"> Sobre </Link>
-        <Link to="/"> Produtos </Link>
+        <Link to="/Produtos"> Produtos </Link>
         <Link to="/"> Contato </Link>
       </nav>
       <nav className="sm:hidden flex flex-col items-end gap-1 font-semibold">
