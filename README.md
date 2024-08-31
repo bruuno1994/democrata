@@ -93,4 +93,4 @@ Contribuições são sempre bem-vindas! Se você deseja colaborar com este proje
 4. Envie suas alterações: git push origin minha-branch.
 5. Abra um Pull Request.
 
-Desenvolvido com ❤ por [Bruno Vinicius] https://www.linkedin.com/in/bruno-vinicius-de-laia-silva
+Desenvolvido com ❤ por [Bruno Vinicius]
