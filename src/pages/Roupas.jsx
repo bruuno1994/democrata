@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Roupas() {
   const [roupas, setRoupas] = useState([]);
@@ -21,6 +21,10 @@ const getRoupas = async () => {
     console.error("Erro ao buscar as roupas:", error);
   }
 };
+
+useEffect(() => {
+  getRoupas();
+}, []);
 
   return (
     <div>
@@ -53,7 +57,6 @@ const getRoupas = async () => {
         </div>
         )}
       </div>
-        <button onClick={getRoupas}>Carregar Todos</button>
       <Footer />
     </div>
   );
