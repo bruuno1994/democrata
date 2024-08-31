@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Projeto Democrata
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Versão:* 0.1.0
 
-## Available Scripts
+*Status:* Em Desenvolvimento (🚧)
 
-In the project directory, you can run:
+## Índice
 
-### `npm start`
+- [Visão Geral](#visão-geral)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação](#instalação)
+- [Scripts Disponíveis](#scripts-disponíveis)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Desenvolvimento com Estilo](#desenvolvimento-com-estilo)
+- [Testes](#testes)
+- [Contribuindo](#contribuindo)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Visão Geral
 
-### `npm test`
+O *Projeto Democrata* é uma aplicação web moderna e escalável, desenvolvida para oferecer uma experiência fluida e otimizada aos usuários. Ele utiliza as últimas tecnologias do ecossistema React, proporcionando um design contemporâneo e responsivo com a integração de Tailwind CSS e Flowbite.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias Utilizadas
 
-### `npm run build`
+O projeto Democrata incorpora as seguintes bibliotecas e frameworks para oferecer uma experiência de desenvolvimento de ponta:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- *[React 18](https://reactjs.org/)*: Biblioteca JavaScript para criar interfaces de usuário.
+- *[React Router Dom](https://reactrouter.com/)*: Roteamento dinâmico para navegação em single-page applications.
+- *[Tailwind CSS](https://tailwindcss.com/)*: Framework CSS utilitário para estilização rápida e responsiva.
+- *[Flowbite](https://flowbite.com/)* e *[Flowbite React](https://github.com/themesberg/flowbite-react)*: Componentes pré-estilizados e acessíveis para criar interfaces modernas.
+- *[Jest](https://jestjs.io/)* e *[Testing Library](https://testing-library.com/)*: Ferramentas para testar componentes e interações do usuário de maneira eficiente.
+- *[Web Vitals](https://web.dev/vitals/)*: Ferramentas para monitorar a performance da aplicação e melhorar a experiência do usuário.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Siga os passos abaixo para configurar e rodar o projeto localmente:
 
-### `npm run eject`
+1. Clone este repositório:
+   bash
+   git clone https://github.com/seu-usuario/democrata.git
+2. Instale as dependências do projeto:
+   bash
+   cd democrata
+   npm install
+3. Inicie o servidor de desenvolvimento:
+   bash
+   npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Scripts Disponíveis
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O projeto contém diversos scripts úteis para o desenvolvimento e build da aplicação:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `npm start`: Inicia o servidor de desenvolvimento local.
+- `npm build`: Gera a build otimizada para produção.
+- `npm test`: Executa os testes automatizados utilizando o Jest.
+- `npm eject`: Ejecta a configuração do React Scripts (use com cautela).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Estrutura do Projeto
 
-## Learn More
+A estrutura do projeto foi planejada para garantir uma boa manutenção e escalabilidade:
+   bash
+   ├── src/
+│   ├── components/     # Componentes reutilizáveis
+│   ├── pages/          # Páginas principais da aplicação
+│   ├── routes.js       # Arquivo responsável por construir e distribuir as rotas da aplicação
+│   ├── index.js        # Arquivo de inicialização
+│   └── styles/         # Arquivos de estilo (Tailwind e customizados)
+├── public/             # Arquivos públicos acessíveis no build
+├── package.json        # Dependências e scripts do projeto
+└── README.md           # Documentação do projeto
+   
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Desenvolvimento com Estilo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Utilizamos o **Tailwind CSS para** estilização do projeto, garantindo que o desenvolvimento seja rápido e com um design moderno. A combinação com **Flowbite** traz componentes prontos para uso, como botões, modais e formulários, que seguem as melhores práticas de design.
 
-### Code Splitting
+## Testes
+O Democrata está configurado com o Jest e React Testing Library para garantir a qualidade dos componentes e suas interações. Para rodar os testes, execute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+bash
+npm test
+```
+Isso iniciará o ambiente de testes em modo interativo, permitindo que você veja o feedback em tempo real.
 
-### Analyzing the Bundle Size
+## Contribuindo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contribuições são sempre bem-vindas! Se você deseja colaborar com este projeto, por favor, siga as etapas:
 
-### Making a Progressive Web App
+1. Faça um fork do repositório.
+2. Crie uma nova branch com suas mudanças: git checkout -b minha-branch.
+3. Commit suas mudanças: git commit -m 'Minha contribuição'.
+4. Envie suas alterações: git push origin minha-branch.
+5. Abra um Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desenvolvido com ❤ por [Bruno Vinicius]([https://www.linkedin.com/in/bruno-vinicius-de-laia-silva/])
