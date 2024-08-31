@@ -318,17 +318,17 @@ function Home() {
 
       <div class="flex flex-col justify-evenly items-center m-auto p-5">
         <span class="flex w-16 h-16 me-3 bg-white border-4 border-gray-500 rounded-full"></span>
-        <p class="mb-3 text-gray-800 dark:text-gray-400">Pagamentos Seguros</p>
+        <p class="mb-3 text-gray-800 dark:text-gray-400 mt-3">Pagamentos Seguros</p>
         </div>
 
         <div class="flex flex-col justify-evenly items-center m-auto p-5">
         <span class="flex w-16 h-16 me-3 bg-white border-4 border-gray-500 rounded-full"></span>
-        <p class="mb-3 text-gray-800 dark:text-gray-400">Fretes e Devoluções Grátis</p>
+        <p class="mb-3 text-gray-800 dark:text-gray-400 mt-3">Fretes e Devoluções Grátis</p>
         </div>
 
         <div class="flex flex-col justify-evenly items-center m-auto p-5">
         <span class="flex w-16 h-16 me-3 bg-white border-4 border-gray-500 rounded-full"></span>
-        <p class="mb-3 text-gray-800 dark:text-gray-400">SAC 24/7</p>
+        <p class="mb-3 text-gray-800 dark:text-gray-400 mt-3">SAC 24/7</p>
         </div>
       </div>
 

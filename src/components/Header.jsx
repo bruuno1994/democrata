@@ -9,13 +9,10 @@ function Header() {
 
   return (
     <header className="flex flex-row items-center justify-between sm:justify-around m-auto p-1 border-b-2 border-gray-400 bg-gray-200">
-      <a
-        href="https://www.democrata.com.br/"
-        class="flex items-center space-x-3 rtl:space-x-reverse"
-      >
+
         <img src="/logo.webp" class="h-20" alt="Democrata Logo" />
-      </a>
-      <nav className="hidden sm:flex justify-between items-center gap-4 font-semibold">
+
+      <nav className="hidden font-serif sm:flex justify-between items-center gap-4 font-semibold">
         <Link to="/"> Home </Link>
         <Link to="/Sobre"> Quem somos </Link>
         <Link to="/Produtos"> Produtos </Link>

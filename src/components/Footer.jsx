@@ -84,7 +84,7 @@ function Footer() {
               <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Download
               </h2>
-              <ul class="text-gray-500 dark:text-white font-medium">
+              <ul class="text-gray-500 dark:text-white font-medium ">
                 <li class="mb-4">
                   <a href="/" class="hover:underline">
                     iOS
@@ -109,7 +109,7 @@ function Footer() {
             </div>
           </div>
           <div class="px-4 py-6 bg-gray-300 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-700 dark:text-gray-300 sm:text-center">
+            <span class="text-sm font-serif text-gray-700 dark:text-gray-300 sm:text-center">
               © 2024 Democrata™. All Rights
               Reserved.
             </span>
