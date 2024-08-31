@@ -2,23 +2,23 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState } from "react";
 
-function Sapatos() {
-  const [sapatos, setSapatos] = useState([]);
+function Roupas() {
+  const [roupas, setRoupas] = useState([]);
 
-const getSapatos = async () => {
+const getRoupas = async () => {
   try {
-    const response = await fetch("https://api.escuelajs.co/api/v1/products/?categoryId=4&offset=0&limit=9");
+    const response = await fetch("https://api.escuelajs.co/api/v1/products/?categoryId=1&offset=0&limit=9");
 
     if (response.status === 200) {
       const data = await response.json();
-      setSapatos(data);
+      setRoupas(data);
       console.log(data);
     } else {
       const data = await response.json();
       console.log(data.error);
     }
   } catch (error) {
-    console.error("Erro ao buscar os sapatos:", error);
+    console.error("Erro ao buscar as roupas:", error);
   }
 };
 
@@ -29,7 +29,7 @@ const getSapatos = async () => {
         Confira os nossos produtos dessa categoria
       </h2>
       <div class="flex flex-wrap items-center p-5 m-auto justify-between gap-4">
-        {sapatos.map((item, index) =>
+        {roupas.map((item, index) =>
         <div key={index} class="w-full h-108 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700 flex flex-col"
         >
           <img
@@ -53,10 +53,10 @@ const getSapatos = async () => {
         </div>
         )}
       </div>
-        <button onClick={getSapatos}>Carregar Todos</button>
+        <button onClick={getRoupas}>Carregar Todos</button>
       <Footer />
     </div>
   );
 }
 
-export default Sapatos;
+export default Roupas;
