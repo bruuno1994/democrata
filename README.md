@@ -59,16 +59,16 @@ O projeto contém diversos scripts úteis para o desenvolvimento e build da apli
 ## Estrutura do Projeto
 
 A estrutura do projeto foi planejada para garantir uma boa manutenção e escalabilidade:
-   bash
-   ├── src/
-│   ├── components/     # Componentes reutilizáveis
-│   ├── pages/          # Páginas principais da aplicação
-│   ├── routes.js       # Arquivo responsável por construir e distribuir as rotas da aplicação
-│   ├── index.js        # Arquivo de inicialização
-│   └── styles/         # Arquivos de estilo (Tailwind e customizados)
-├── public/             # Arquivos públicos acessíveis no build
-├── package.json        # Dependências e scripts do projeto
-└── README.md           # Documentação do projeto
+
+- src/
+- components/        `Componentes reutilizáveis`
+- pages/             `Páginas principais da aplicação`
+- routes.js        `Arquivo responsável por distribuir as rotas da aplicação`
+- index.js         `Arquivo de inicialização`
+- styles/          `Arquivos de estilo (Tailwind e customizados)`
+- public/              `Arquivos públicos acessíveis no build`
+- package.json         `Dependências e scripts do projeto`
+- README.md            `Documentação do projeto`
    
 
 ## Desenvolvimento com Estilo
@@ -93,4 +93,4 @@ Contribuições são sempre bem-vindas! Se você deseja colaborar com este proje
 4. Envie suas alterações: git push origin minha-branch.
 5. Abra um Pull Request.
 
-Desenvolvido com ❤ por [Bruno Vinicius]([https://www.linkedin.com/in/bruno-vinicius-de-laia-silva/])
+Desenvolvido com ❤ por [Bruno Vinicius] https://www.linkedin.com/in/bruno-vinicius-de-laia-silva
