@@ -10,6 +10,7 @@ import { MdDeleteForever } from "react-icons/md";
 function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [hasMoreProducts, setHasMoreProducts] = useState(true);
   const limite = 6;
   const [editData, setEditData] = useState(null);
 
@@ -23,6 +24,13 @@ function Produtos() {
 
       if (response.status === 200) {
         const data = await response.json();
+
+        if (data.length < limite) {
+          setHasMoreProducts(false);
+        } else {
+          setHasMoreProducts(true);
+        }
+
         setProdutos(data);
       } else {
         const data = await response.json();
@@ -57,14 +65,14 @@ function Produtos() {
       if (!produtoData.imageUrl.trim()) {
         toast.warning("Por favor, insira uma URL válida para a imagem.");
         return;
-    }
+      }
 
       const newProductData = {
         title: produtoData.title,
         price: parseFloat(produtoData.price),
         description: produtoData.description,
         categoryId: parseInt(produtoData.categoryId),
-        images: [produtoData.imageUrl]
+        images: [produtoData.imageUrl],
       };
 
       try {
@@ -190,7 +198,9 @@ function Produtos() {
   }, [offset]);
 
   const handleProximaPagina = () => {
-    setOffset((prevOffset) => prevOffset + limite);
+    if (hasMoreProducts) {
+      setOffset((prevOffset) => prevOffset + limite);
+    }
   };
 
   const handlePaginaAnterior = () => {
@@ -268,6 +278,27 @@ function Produtos() {
 
       <hr class="w-48 h-1 mx-auto my-4 bg-gray-600 border-0 rounded md:my-10" />
 
+      <div class="flex items-center justify-center">
+        <Link to="/ProdutosFiltrados">
+          <button
+            type="button"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-5"
+          >
+            Filtrar por Preço
+          </button>
+        </Link>
+        <Link to="/">
+          <button
+            type="button"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-5"
+          >
+            Voltar
+          </button>
+        </Link>
+      </div>
+
+      <hr class="w-48 h-1 mx-auto my-4 bg-gray-600 border-0 rounded md:my-10" />
+
       <h2 class="text-4xl text-center font-serif mt-3">
         Linha completa de Produtos
       </h2>
@@ -336,6 +367,7 @@ function Produtos() {
         <button
           type="button"
           onClick={handleProximaPagina}
+          disabled={!hasMoreProducts}
           class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 "
         >
           Próximo
@@ -344,6 +376,7 @@ function Produtos() {
       {/* Fim dos Botões de Paginação */}
 
       <hr class="w-48 h-1 mx-auto my-4 bg-gray-600 border-0 rounded md:my-10" />
+      <br />
 
       {/* Início do Formulário de Cadastro */}
       <div class="flex items-center justify-evenly m-auto p-5">

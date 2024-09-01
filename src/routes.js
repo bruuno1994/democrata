@@ -6,6 +6,7 @@ import Produtos from "./pages/Produtos";
 import Sapatos from "./pages/Sapatos";
 import Roupas from "./pages/Roupas";
 import Acessorios from "./pages/Acessorios";
+import ProdutosFiltrados from "./pages/ProdutosFiltrados";
 
 function RoutesApp() {
     return (
@@ -18,6 +19,7 @@ function RoutesApp() {
             <Route path="/Sapatos" element={<Sapatos />} />
             <Route path="/Roupas" element={<Roupas />} />
             <Route path="/Acessorios" element={<Acessorios />} />
+            <Route path="/ProdutosFiltrados" element={<ProdutosFiltrados />} />
 
             </Routes>
         </BrowserRouter>
