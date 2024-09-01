@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 
 function Sapatos() {
   const [sapatos, setSapatos] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const limite = 6;
 
   const getSapatos = async () => {
     try {
       const response = await fetch(
-        "https://api.escuelajs.co/api/v1/products/?categoryId=4&offset=0&limit=6"
+        `https://api.escuelajs.co/api/v1/products/?categoryId=4&offset=${offset}&limit=${limite}`
       );
 
       if (response.status === 200) {
@@ -27,11 +29,22 @@ function Sapatos() {
 
   useEffect(() => {
     getSapatos();
-  }, []);
+  }, [offset]);
+
+  const handleProximaPagina = () => {
+    setOffset((prevOffset) => prevOffset + limite);
+  };
+
+  const handlePaginaAnterior = () => {
+    if (offset > 0) {
+      setOffset((prevOffset) => prevOffset - limite);
+    }
+  };
 
   return (
     <div>
       <Header />
+      <h2 class="text-4xl mt-3 text-center font-serif">Sapatos</h2>
       <h2 class="text-4xl mt-3 text-center font-serif">
         Confira os nossos produtos dessa categoria
       </h2>
@@ -39,7 +52,7 @@ function Sapatos() {
         {sapatos.map((item, index) => (
           <div
             key={index}
-            class="w-full h-108 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700 flex flex-col"
+            class="w-full h-108 max-w-sm bg-white border border-gray-200 rounded-lg hover:border-gray-600 flex flex-col"
           >
             <img
               class="p-8 rounded-t-lg"
@@ -47,14 +60,14 @@ function Sapatos() {
               alt="imagem do produto 1"
             />
             <div class="px-5 pb-5">
-              <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="text-lg font-semibold text-center truncate tracking-tight text-gray-900">
                 {item.title}
               </h5>
               <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">
+              <div class="flex items-center justify-center">
+                <span class="text-3xl font-bold text-gray-900">
                   R$ {item.price},00
                 </span>
               </div>
@@ -62,6 +75,26 @@ function Sapatos() {
           </div>
         ))}
       </div>
+      {/* Início dos Botões de paginação  */}
+      <div class="flex items-center justify-center m-auto p-5">
+        <button
+          type="button"
+          onClick={handlePaginaAnterior}
+          disabled={offset === 0}
+          class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 "
+        >
+          Anterior
+        </button>
+
+        <button
+          type="button"
+          onClick={handleProximaPagina}
+          class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 "
+        >
+          Próximo
+        </button>
+      </div>
+      {/* Fim dos Botões de Paginação */}
       <div class="flex items-center justify-center">
         <Link to="/Produtos">
           <button

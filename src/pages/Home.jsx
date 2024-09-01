@@ -50,27 +50,27 @@ function Home() {
       {/* Início Novidades */}
 
       <div class="flex items-center p-5 m-auto justify-between">
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-300 rounded-lg hover:border-gray-600 text-center truncate">
           <img
             class="p-8 rounded-t-lg"
             src="sapato.webp"
             alt="imagem do produto 1"
           />
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900">
               Sapato Masculino
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-3xl font-bold text-gray-900 dark:text-white">
+            <div class="flex items-center justify-center">
+              <span class="text-3xl font-bold text-gray-900">
                 R$ 199,90
               </span>
             </div>
           </div>
         </div>
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-300 rounded-lg  hover:border-gray-600 text-center truncate">
           <img
             class="p-8 rounded-t-lg"
             src="/relogio.webp"
@@ -78,34 +78,34 @@ function Home() {
           />
 
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900">
               Relógio Masculino
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-3xl font-bold text-gray-900 dark:text-white">
+            <div class="flex items-center justify-center">
+              <span class="text-3xl font-bold text-gray-900">
                 R$ 399,90
               </span>
             </div>
           </div>
         </div>
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-300 rounded-lg  hover:border-gray-600 text-center truncate">
           <img
             class="p-8 rounded-t-lg"
             src="/jaqueta.jpg"
             alt="imagem do produto 3"
           />
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900">
               Jaqueta Masculina
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-3xl font-bold text-gray-900 dark:text-white">
+            <div class="flex items-center justify-center">
+              <span class="text-3xl font-bold text-gray-900 ">
                 R$ 599,90
               </span>
             </div>
@@ -113,19 +113,22 @@ function Home() {
         </div>
       </div>
       <br />
+
       {/* Fim Novidades */}
+
       <h3 class="text-4xl text-center font-serif">Blogs</h3>
       <br />
+
       {/* Início Blogs */}
 
       <div class="flex flex-row justify-evenly items-center m-auto p-5">
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <div class="max-w-sm p-6 bg-white border border-gray-300 rounded-lg shadow hover:border-gray-600 text-center">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
               Conheça nossa história
             </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+
+          <p class="mb-3 font-normal text-gray-700">
             Uma empresa de família, que já está no mercado há quatro décadas.
           </p>
           <Link to="/Sobre">
@@ -153,13 +156,13 @@ function Home() {
           </Link>
         </div>
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <div class="max-w-sm p-6 bg-white border border-gray-300 rounded-lg hover:border-gray-600 text-center">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Conheça nosso blog
             </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+
+          <p class="mb-3 font-normal text-gray-700">
             Fique por dentro de todas as novidades. Confira!
           </p>
           <a
@@ -187,6 +190,7 @@ function Home() {
         </div>
       </div>
       <br />
+
       {/* Fim Blogs */}
 
       {/* Início Categorias */}
@@ -195,7 +199,7 @@ function Home() {
 
       <div class="justify-center items-center m-auto p-5 grid grid-cols-3 gap-4">
         {/* Categoria 1 */}
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-600 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-300 rounded-lg hover:border-gray-600 text-center">
           <img
             class="h-auto max-w-full rounded-lg"
             src="/roupa-masculina.jpg"
@@ -203,11 +207,11 @@ function Home() {
           />
 
           <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Roupas
             </h5>
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-100">
+            <p class="mb-3 font-normal text-gray-700">
               Para homens de bom gosto. Confira!
             </p>
 
@@ -236,13 +240,13 @@ function Home() {
         </div>
 
         {/* Categoria 2 */}
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-600 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-300 rounded-lg hover:border-gray-600 text-center">
           <img class="h-auto max-w-full rounded-lg" src="/calcado-masculino.jpg" alt="" />
           <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Calçados
             </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-100">
+            <p class="mb-3 font-normal text-gray-700">
               Conforto e estilo em um só lugar. Confira!
             </p>
             <a
@@ -270,14 +274,14 @@ function Home() {
         </div>
 
         {/* Categoria 3 */}
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-600 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-300 rounded-lg hover:border-gray-600 text-center ">
           <img class="h-auto max-w-full rounded-lg" src="/relogio-masculino.jpg" alt="" />
 
           <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
               Acessórios
             </h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-100">
+            <p class="mb-3 font-normal text-gray-700">
               Para complementar o seu look. Confira!
             </p>
             <a
@@ -308,11 +312,11 @@ function Home() {
       {/* Fim Categorias */}
       <div class="flex flex-col justify-center items-center m-auto p-5">
 
-      <p class="text-gray-700 dark:text-gray-500 p-5 text-center">
+      <p class="text-gray-700 p-5 text-center">
         Uma loja como você nunca viu!
       </p>
-      <hr class="w-48 h-1 mx-auto my-4 bg-gray-300 border-0 rounded md:my-10 dark:bg-gray-700" />
-      <p class="text-gray-700 dark:text-gray-500 p-5 text-center ">
+      <hr class="w-48 h-1 mx-auto my-4 bg-gray-300 border-0 rounded md:my-10 " />
+      <p class="text-gray-700 p-5 text-center ">
         Há muitos motivos para comprar conosco. Venha nos visitar!
       </p>
       </div>
@@ -322,17 +326,17 @@ function Home() {
 
       <div class="flex w-16 flex-col justify-center items-center">
         <span class="flex w-16 h-16 bg-white border-4 border-gray-500 rounded-full"></span>
-        <p class="mb-3 text-center xl:text-wrap  text-gray-800 dark:text-gray-600 mt-3">Pagamentos Seguros</p>
+        <p class="mb-3 text-center xl:text-wrap text-gray-800 mt-3">Pagamentos Seguros</p>
         </div>
 
         <div class="flex w-16 flex-col justify-center items-center ">
         <span class="flex w-16 h-16 bg-white border-4 border-gray-500 rounded-full"></span>
-        <p class="mb-3 text-center xl:text-wrap text-gray-800 dark:text-gray-600 mt-3">Fretes e Devoluções Grátis</p>
+        <p class="mb-3 text-center xl:text-wrap text-gray-800 mt-3">Fretes e Devoluções Grátis</p>
         </div>
 
         <div class="flex w-16 flex-col justify-center items-center ">
         <span class="flex w-16 h-16 bg-white border-4 border-gray-500 rounded-full"></span>
-         <p class="mb-3 text-center xl:text-wrap text-gray-800 dark:text-gray-600 mt-3">SAC 24/7</p>
+         <p class="mb-3 text-center xl:text-wrap text-gray-800 mt-3">SAC 24/7</p>
         </div>
       </div>
 

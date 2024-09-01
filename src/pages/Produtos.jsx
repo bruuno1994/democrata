@@ -208,7 +208,7 @@ function Produtos() {
       </h2>
 
       <div class="flex items-center p-5 m-auto justify-between">
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg hover:border-gray-600">
           <Link to="/Sapatos">
             <img
               class="p-8 rounded-t-lg"
@@ -218,7 +218,7 @@ function Produtos() {
           </Link>
 
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="text-xl font-semibold text-center tracking-tight text-gray-900">
               <Link to="/Sapatos"> Sapatos </Link>
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
@@ -227,7 +227,7 @@ function Produtos() {
             <div class="flex items-center justify-between"></div>
           </div>
         </div>
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg hover:border-gray-600">
           <Link to="/Acessorios">
             <img
               class="p-8 rounded-t-lg"
@@ -237,7 +237,7 @@ function Produtos() {
           </Link>
 
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="text-xl font-semibold text-center tracking-tight text-gray-900">
               <Link to="/Acessorios"> Acessórios </Link>
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
@@ -246,7 +246,7 @@ function Produtos() {
             <div class="flex items-center justify-between"></div>
           </div>
         </div>
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg hover:border-gray-600">
           <Link to="/Roupas">
             <img
               class="p-8 rounded-t-lg"
@@ -255,7 +255,7 @@ function Produtos() {
             />
           </Link>
           <div class="px-5 pb-5">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-600 dark:text-white">
+            <h5 class="text-xl font-semibold text-center tracking-tight text-gray-600">
               <Link to="/Roupas"> Roupas </Link>
             </h5>
             <div class="flex items-center mt-2.5 mb-5">
@@ -278,7 +278,7 @@ function Produtos() {
         {produtos.map((item) => (
           <div
             key={item.id}
-            class="w-full h-108 max-w-sm bg-white border border-gray-400 rounded-lg shadow flex flex-col"
+            class="w-full h-108 max-w-sm bg-white border border-gray-300 rounded-lg shadow flex flex-col hover:border-gray-600"
           >
             <img
               class="p-8 rounded-t-lg"
@@ -419,7 +419,6 @@ function Produtos() {
               name="description"
               value={produtoData.description}
               onChange={handleInputChange}
-              required
               class="block w-full p-2 text-gray-900 border border-gray-600 rounded-lg bg-gray-100 text-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>

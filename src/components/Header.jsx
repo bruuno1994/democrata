@@ -16,7 +16,6 @@ function Header() {
         <Link to="/"> Home </Link>
         <Link to="/Sobre"> Quem somos </Link>
         <Link to="/Produtos"> Produtos </Link>
-        <Link to="/"> Contato </Link>
       </nav>
       <nav className="sm:hidden flex flex-col items-end gap-1 font-semibold">
         <button

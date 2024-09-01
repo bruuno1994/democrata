@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 
 function Acessorios() {
   const [acessorios, setAcessorios] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const limite = 6;
 
   const getAcessorios = async () => {
     try {
       const response = await fetch(
-        "https://api.escuelajs.co/api/v1/products/?categoryId=5&offset=0&limit=500"
+        `https://api.escuelajs.co/api/v1/products/?categoryId=5&offset=${offset}&limit=${limite}`
       );
 
       if (response.status === 200) {
@@ -29,9 +31,22 @@ function Acessorios() {
     getAcessorios();
   }, []);
 
+  const handleProximaPagina = () => {
+    setOffset((prevOffset) => prevOffset + limite);
+  };
+
+  const handlePaginaAnterior = () => {
+    if (offset > 0) {
+      setOffset((prevOffset) => prevOffset - limite);
+    }
+  };
+
   return (
     <div>
       <Header />
+      <h2 class="text-4xl mt-3 text-center font-serif">
+        Acessórios
+      </h2>
       <h2 class="text-4xl mt-3 text-center font-serif">
         Confira os nossos produtos dessa categoria
       </h2>
@@ -39,7 +54,7 @@ function Acessorios() {
         {acessorios.map((item, index) => (
           <div
             key={index}
-            class="w-full h-108 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-700 flex flex-col"
+            class="w-full h-108 max-w-sm bg-white border border-gray-200 rounded-lg flex flex-col hover:border-gray-600"
           >
             <img
               class="p-8 rounded-t-lg"
@@ -47,14 +62,14 @@ function Acessorios() {
               alt="imagem do produto 1"
             />
             <div class="px-5 pb-5">
-              <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="text-lg text-center truncate font-semibold tracking-tight text-gray-900">
                 {item.title}
               </h5>
               <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">
+              <div class="flex items-center justify-center">
+                <span class="text-3xl text-center font-bold text-gray-900">
                   R$ {item.price},00
                 </span>
               </div>
