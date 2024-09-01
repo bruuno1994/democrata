@@ -9,7 +9,7 @@ function Acessorios() {
   const getAcessorios = async () => {
     try {
       const response = await fetch(
-        "https://api.escuelajs.co/api/v1/products/?categoryId=5&offset=0&limit=6"
+        "https://api.escuelajs.co/api/v1/products/?categoryId=5&offset=0&limit=500"
       );
 
       if (response.status === 200) {
