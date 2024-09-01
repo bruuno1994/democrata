@@ -1,8 +1,8 @@
 # Projeto Democrata
 
-*Versão:* 0.1.0
+*Versão:* 1.0.0
 
-*Status:* Em Desenvolvimento (🚧)
+*Status:* Concluído!
 
 ## Índice
 
