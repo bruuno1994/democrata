@@ -17,11 +17,7 @@ function Acessorios() {
       if (response.status === 200) {
         const data = await response.json();
         setAcessorios(data);
-        console.log(data);
-      } else {
-        const data = await response.json();
-        console.log(data.error);
-      }
+      } 
     } catch (error) {
       console.error("Erro ao buscar as roupas:", error);
     }

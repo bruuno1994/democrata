@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 
+import { getProdutos, deleteProduto, updateProduto } from "../services/produtoService";
+
 function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -16,30 +18,17 @@ function Produtos() {
 
   // Início do Método Read do CRUD
 
-  const getProdutos = async () => {
-    try {
-      const response = await fetch(
-        `https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limite}`
-      );
-
-      if (response.status === 200) {
-        const data = await response.json();
-
-        if (data.length < limite) {
-          setHasMoreProducts(false);
-        } else {
-          setHasMoreProducts(true);
-        }
-
-        setProdutos(data);
-      } else {
-        const data = await response.json();
-        console.log(data.error);
-      }
-    } catch (error) {
-      console.error("Erro ao buscar os produtos:", error);
+  const findProdutos = async () => {
+    const data = await getProdutos(offset, limite)
+  
+    if(data) {
+      setProdutos(data)
+      setHasMoreProducts(true)
     }
-  };
+    if (data.length < limite) {
+      setHasMoreProducts(false)
+    } 
+  }
 
   // Fim do Método Read do CRUD
 
@@ -61,20 +50,27 @@ function Produtos() {
   const handleProdutoNovo = React.useCallback(
     async (e) => {
       e.preventDefault();
-
-      if (!produtoData.imageUrl.trim()) {
+  
+      const { title, price, description, categoryId, imageUrl } = produtoData;
+  
+      if (!title.trim() || !description.trim() || !categoryId.trim()) {
+        toast.warning("Por favor, preencha todos os campos obrigatórios.");
+        return;
+      }
+  
+      if (!imageUrl.trim()) {
         toast.warning("Por favor, insira uma URL válida para a imagem.");
         return;
       }
-
+  
       const newProductData = {
-        title: produtoData.title,
-        price: parseFloat(produtoData.price),
-        description: produtoData.description,
-        categoryId: parseInt(produtoData.categoryId),
-        images: [produtoData.imageUrl],
+        title,
+        price: parseFloat(price),
+        description,
+        categoryId: parseInt(categoryId),
+        images: [imageUrl],
       };
-
+  
       try {
         const response = await fetch(
           "https://api.escuelajs.co/api/v1/products/",
@@ -86,14 +82,20 @@ function Produtos() {
             body: JSON.stringify(newProductData),
           }
         );
-
+  
         if (response.status === 201) {
           toast.success("Produto cadastrado com sucesso!");
-          getProdutos();
+          setProdutoData({
+            title: "",
+            price: "",
+            description: "",
+            categoryId: "",
+            imageUrl: "",
+          });
+          findProdutos();
         } else {
           const data = await response.json();
-          console.log("Resposta:", data);
-
+          console.error("Erro ao cadastrar produto:", data);
           toast.warning(`Ops, tivemos um problema: ${data.error}`);
         }
       } catch (error) {
@@ -103,6 +105,7 @@ function Produtos() {
     },
     [produtoData]
   );
+  
 
   // Fim do Método Create do CRUD
 
@@ -112,7 +115,7 @@ function Produtos() {
   const handleEditClick = (produto) => {
     if (produto) {
       setEditData({
-        id: produto.id || "", // Use um valor padrão caso esteja indefinido
+        id: produto.id || "", 
         title: produto.title || "",
         price: produto.price || "",
         description: produto.description || "",
@@ -122,79 +125,36 @@ function Produtos() {
   };
 
   // Função para atualizar o produto
-
+  
   const handleUpdateProduct = async (e) => {
     e.preventDefault();
     const { id, ...updatedData } = editData;
     const updatedProduct = {
       ...updatedData,
     };
-
-    try {
-      const response = await fetch(
-        `https://api.escuelajs.co/api/v1/products/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedProduct),
-        }
-      );
-
-      if (response.ok) {
-        toast.success("Produto atualizado com sucesso!");
-        getProdutos(); // Atualizar a lista de produtos
-        setEditData(null); // Fechar o formulário de edição
-      } else {
-        const data = await response.json();
-        toast.warning(`Ops, tivemos um problema: ${data.error}`);
-        console.log(data.error);
-      }
-    } catch (error) {
-      console.error("Erro ao atualizar o produto:", error);
-      toast.warning("Falha no sistema!");
-    }
-  };
-
-  // Função para lidar com as mudanças no formulário
-  const handleEditInputChange = (e) => {
-    const { name, value } = e.target;
-
-    setEditData({ ...editData, [name]: value });
+    const data = JSON.stringify(updatedProduct)
+    await updateProduto(data, id)
+    .then(() => {
+      findProdutos()
+      setEditData(null)
+    })
   };
 
   // Fim do Método Update do CRUD
 
   // Início do Método Delete do CRUD
 
-  const handleDeleteProduct = async (id) => {
-    try {
-      const response = await fetch(
-        `https://api.escuelajs.co/api/v1/products/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
-
-      if (response.status === 200 || response.status === 204) {
-        toast.success("Produto excluído com sucesso!");
-        getProdutos(); // Atualiza a lista de produtos
-      } else {
-        const data = await response.json();
-        toast.warning("Falha ao tentar excluir o produto.");
-        console.log(data);
-      }
-    } catch (error) {
-      console.log("Erro ao excluir o produto:", error);
-      toast.error("Falha no sistema!");
-    }
-  };
+  const handleDelete = async (id) => {
+    await deleteProduto(id)
+    .then(() => {
+      findProdutos()
+    })
+  }
 
   // Fim do Método Delete do CRUD
 
   useEffect(() => {
-    getProdutos();
+    findProdutos()
   }, [offset]);
 
   const handleProximaPagina = () => {
@@ -339,7 +299,7 @@ function Produtos() {
               </button>
 
               <button
-                onClick={() => handleDeleteProduct(String(item.id))}
+                onClick={() => handleDelete(String(item.id))}
                 type="button"
                 class="flex items-center text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full px-6 py-3.5 text-base text-center me-2 mb-2 "
               >

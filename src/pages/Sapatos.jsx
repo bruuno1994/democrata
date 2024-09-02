@@ -17,11 +17,7 @@ function Sapatos() {
       if (response.status === 200) {
         const data = await response.json();
         setSapatos(data);
-        console.log(data);
-      } else {
-        const data = await response.json();
-        console.log(data.error);
-      }
+      } 
     } catch (error) {
       console.error("Erro ao buscar os sapatos:", error);
     }

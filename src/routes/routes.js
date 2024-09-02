@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Sobre from "./pages/Sobre";
-import Produtos from "./pages/Produtos";
-import Sapatos from "./pages/Sapatos";
-import Roupas from "./pages/Roupas";
-import Acessorios from "./pages/Acessorios";
-import ProdutosFiltrados from "./pages/ProdutosFiltrados";
+import Home from "../pages/Home";
+import Sobre from "../pages/Sobre";
+import Produtos from "../pages/Produtos";
+import Sapatos from "../pages/Sapatos";
+import Roupas from "../pages/Roupas";
+import Acessorios from "../pages/Acessorios";
+import ProdutosFiltrados from "../pages/ProdutosFiltrados";
 
 function RoutesApp() {
     return (
